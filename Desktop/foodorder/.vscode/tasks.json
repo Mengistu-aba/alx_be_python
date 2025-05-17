@@ -1,0 +1,24 @@
+{
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "build",
+                "type": "shell",
+                "command": "g++",
+                "args": [
+                    "-g",
+                    "${file}",
+                    "-o",
+                    "${fileDirname}/${fileBasenameNoExtension}",
+                    "-I/usr/include/mysql", // Linux path - adjust for Windows
+                    "-L/usr/lib/x86_64-linux-gnu", // Linux path - adjust for Windows
+                    "-lmysqlcppconn"
+                ],
+                "group": {
+                    "kind": "build",
+                    "isDefault": true
+                },
+                "problemMatcher": []
+            }
+        ]
+    }
